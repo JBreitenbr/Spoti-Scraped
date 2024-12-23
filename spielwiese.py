@@ -1,5 +1,5 @@
 import pandas as pd
-df1=pd.read_csv("spotidata.csv")
+df1=pd.read_csv("spotiData.csv")
 df2=pd.read_csv("new.csv")
 print(len(df2))
 mrg=pd.merge(df1,df2,on=["artist","track"],how="right")

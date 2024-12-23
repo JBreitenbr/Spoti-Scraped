@@ -1,5 +1,5 @@
 import pandas as pd
-s=pd.read_csv("spotiData.csv")
+s=pd.read_csv("spotidata.csv")
 for i in range(len(s)):
   s.loc[i,"maiuscule"]=s.loc[i,"alphaname"].upper()[0]
 
