@@ -62,7 +62,7 @@ def get_genres(artist_id):
             else:
                 stri+=s+" "
     return stri[:-1]
-new=pd.read_csv("spieli.csv")[30:60]
+new=pd.read_csv("spieli.csv")
 album_ids=new["album_id"].tolist()
 artist_ids=new["artist_id"].tolist()
 album_name=[]
@@ -89,4 +89,4 @@ new["album_date"]=album_date
 new["album_tracks"]=album_tracks
 new["album_pic"]=album_pic
 new["genres"]=genres
-new.to_csv("spieli3.csv",index=False)
+new.to_csv("spieli2.csv",index=False)
