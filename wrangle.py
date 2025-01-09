@@ -1,5 +1,5 @@
 import pandas as pd
-df1=pd.read_csv("spotidata.csv")
+df1=pd.read_csv("spotiData.csv")
 df2=pd.read_csv("spieli2.csv")
 bij=pd.read_csv("bij.csv")
 df2=pd.merge(df2,bij,on=["artist"],how="inner")
@@ -23,4 +23,4 @@ del df["index"]
 del df["year"]
 del df["pos"]
 print(len(df))
-df.to_csv("spotiData.csv",index=False)
+df.to_csv("spotidata.csv",index=False)
