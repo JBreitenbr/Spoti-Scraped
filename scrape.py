@@ -63,30 +63,36 @@ def get_genres(artist_id):
                 stri+=s+" "
     return stri[:-1]
 new=pd.read_csv("spieli.csv")
-album_ids=new["album_id"].tolist()
-artist_ids=new["artist_id"].tolist()
-album_name=[]
-album_type = []
-album_date = []
-album_tracks = []
-album_pic = []
-genres = []
-for album_id in album_ids:
-    album_name.append(get_album_name(album_id))
-for album_id in album_ids:
-    album_type.append(get_album_type(album_id))
-for album_id in album_ids:
-    album_date.append(get_album_date(album_id))
-for album_id in album_ids:
-    album_tracks.append(get_album_tracks(album_id))
-for album_id in album_ids:
-    album_pic.append(get_album_pic(album_id))
-for artist_id in artist_ids:
-  genres.append(get_genres(artist_id))
-new["album_name"]=album_name
-new["album_type"]=album_type
-new["album_date"]=album_date
-new["album_tracks"]=album_tracks
-new["album_pic"]=album_pic
-new["genres"]=genres
-new.to_csv("spieli2.csv",index=False)
+def scrape(new):
+  album_ids=new["album_id"].tolist()
+  art_ids=new["artist_id"].tolist()
+  album_name=[]
+  album_type = []
+  album_date = []
+  album_tracks = []
+  album_pic = []
+  genres = []
+  for album_id in album_ids:
+      album_name.append(get_album_name(album_id))
+        
+  for album_id in album_ids:
+      album_type.append(get_album_type(album_id))
+    
+  for album_id in album_ids:
+      album_date.append(get_album_date(album_id))
+  for album_id in album_ids:
+      album_tracks.append(get_album_tracks(album_id))
+
+  for album_id in album_ids:
+      album_pic.append(get_album_pic(album_id))
+  for artist_id in art_ids:
+      genres.append(get_genres(artist_id))
+
+
+  new["album_name"]=album_name
+  new["album_type"]=album_type
+  new["album_date"]=album_date
+  new["album_tracks"]=album_tracks
+  new["album_pic"]=album_pic
+  new["genres"]=genres
+  new.to_csv("spieli2.csv",index=False)
